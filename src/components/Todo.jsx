@@ -16,7 +16,6 @@ function Todo(props) {
               defaultValue={activity.text}
               type="text"
               name="text"
-              className={styles.todoField}
               key={activity.id}
               className={
                 activity.completed === true

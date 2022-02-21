@@ -46,30 +46,30 @@ function App() {
     );
   }
 
-  function filterActivity() {
-    let filterArr = [];
-    switch (status) {
-      case "completed":
-        setFiltered(activities);
-        filterArr = [...activities].filter(
-          (activity) => activity.completed === true
-        );
-        setFiltered(filterArr);
-        break;
-      case "uncompleted":
-        setFiltered(activities);
-        filterArr = [...activities].filter(
-          (activity) => activity.completed === false
-        );
-        setFiltered(filterArr);
-        break;
-      default:
-        setFiltered(activities);
-        break;
-    }
-  }
-
   useEffect(() => {
+    function filterActivity() {
+      let filterArr = [];
+      switch (status) {
+        case "completed":
+          setFiltered(activities);
+          filterArr = [...activities].filter(
+            (activity) => activity.completed === true
+          );
+          setFiltered(filterArr);
+          break;
+        case "uncompleted":
+          setFiltered(activities);
+          filterArr = [...activities].filter(
+            (activity) => activity.completed === false
+          );
+          setFiltered(filterArr);
+          break;
+        default:
+          setFiltered(activities);
+          break;
+      }
+    }
+
     filterActivity();
   }, [activities, status]);
 
